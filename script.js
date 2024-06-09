@@ -8,7 +8,7 @@ function reload() {
 }
 
 async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const res = await fetch("${url}${query}&apiKey=${API_KEY}");
     const data = await res.json();
     bindData(data.articles);
 }
@@ -41,7 +41,7 @@ function fillDataInCard(cardClone, article) {
         timeZone: "Asia/Jakarta",
     });
 
-    newsSource.innerHTML = `${article.source.name} · ${date}`;
+    newsSource.innerHTML = "${article.source.name} · ${date}";
 
     cardClone.firstElementChild.addEventListener("click", () => {
         window.open(article.url, "_blank");
